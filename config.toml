@@ -1,0 +1,52 @@
+baseURL = "https://www.kipuai.com/"
+languageCode = "en-us"
+title = "Kipu"
+theme = "hugo-hero-theme"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.92.0"
+    
+[params]
+  google_analytics_id=""
+
+  [params.logo]
+    name = "Kipu"
+    mobile = "favicon.png"
+    mobile_height = "36px"
+    mobile_width = "36px"
+    desktop = "images/logo.svg"
+    desktop_height = "29px"
+    desktop_width = "217px"
+    alt = "Kipu"
+
+  [params.homepage_meta_tags]
+    meta_description = "Kipu is your partner to unlock your data & AI potential, and deliver measurable outcomes."
+    meta_og_title = "Kipu"
+    meta_og_type = "website"
+    meta_og_url = "https://kipuai.com"
+    meta_og_image = "images/meta_og_image.png"
+    meta_og_description = "Kipu is your partner to unlock your data & AI potential, and deliver measurable outcomes."
+    meta_twitter_card = "summary"
+    meta_twitter_site = "@kipuai"
+    meta_twitter_creator = "@kipuai"
+
+# [[menu.main]]
+# 	name = "Services"
+# 	url = "/services/"
+#     weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+  pages = "/:filename/"
