@@ -1,28 +1,30 @@
 email: 'contact@kipuai.com'
-phone: '900 900 900'
+# phone: '900 900 900'  # You can comment out or remove the phone number
 businessName: 'Kipu'
-address: |
-  123 Some Street
-  City, State 12345
+address:  # Remove the address entirely
+# address: |  # If you wanted to keep an address, but make it multiline, use the pipe
+#  123 Some Street
+#  City, State 12345
 # hours:
-#   - day: Monday
-#     open: 8:30am
-#     close: 5:00pm
-#   - day: Tuesday
-#     open: 8:30am
-#     close: 5:00pm
-#   - day: Wednesday
-#     open: 8:30am
-#     close: 5:00pm
-#   - day: Thursday
-#     open: 8:30am
-#     close: 5:00pm
-#   - day: Friday
-#     open: 8:30am
-#     close: 5:00pm
-#   - day: Saturday
-#     open: Closed
-#     close:
-#   - day: Sunday
-#     open: Closed
-#     close:
+#  - day: Monday
+#   open: 8:30am
+#   close: 5:00pm
+#  - day: Tuesday
+#   open: 8:30am
+#   close: 5:00pm
+#  - day: Wednesday
+#   open: 8:30am
+#   close: 5:00pm
+#  - day: Thursday
+#   open: 8:30am
+#   close: 5:00pm
+#  - day: Friday
+#   open: 8:30am
+#   close: 5:00pm
+#  - day: Saturday
+#   open: Closed
+#   close:
+#  - day: Sunday
+#   open: Closed
+#   close:
+freeConsultation: "We offer a free consultation for all new clients. The best way to reach us is via email." # Add this line
