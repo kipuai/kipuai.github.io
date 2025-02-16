@@ -1,7 +1,8 @@
 ---
 title: 'Your Trusted Partner in Data and AI'
 # weight: 1
-background: 'images/joel-filipe-VuwAfoHpxgs-unsplash.jpeg'
+background: 'images/office-collab.png'
+#background: 'images/joel-filipe-VuwAfoHpxgs-unsplash.jpeg'
 # button: 'Our Work'
 # buttonLink: 'work'
 ---
