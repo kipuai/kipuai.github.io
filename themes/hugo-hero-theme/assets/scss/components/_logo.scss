@@ -1,7 +1,10 @@
 .logo {
-  display: none;
+  // Changed this from 'display: none;' to 'display: block;'
+  display: block;
 
   @include media-breakpoint-up(sm) {
+    // This 'display: block;' here becomes slightly redundant but doesn't hurt.
+    // It ensures visibility on 'sm' breakpoints and above.
     display: block;
     max-width: none;
   }
@@ -19,10 +22,12 @@
 }
 
 .logo-mobile {
-  display: block;
+  // Changed this from 'display: block;' to 'display: none;'
+  display: none;
   padding: 10px 0;
 
   @include media-breakpoint-up(sm) {
+    // Ensures it stays hidden on larger screens as well
     display: none;
   }
 
