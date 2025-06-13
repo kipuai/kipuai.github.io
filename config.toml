@@ -13,10 +13,10 @@ theme = "hugo-hero-theme"
 
 [params.logo]
   name = "Kipu"
-  mobile = "images/logo.png"
+  mobile = "/images/logo.png"   # <--- CORRECTED!
   mobile_height = "50px"
   mobile_width = "auto"
-  desktop = "images/logo.png"
+  desktop = "/images/logo.png"  # <--- CORRECTED!
   desktop_height = "100px"
   desktop_width = "auto"
   alt = "Kipu"
@@ -26,7 +26,7 @@ theme = "hugo-hero-theme"
     meta_og_title = "Kipu"
     meta_og_type = "website"
     meta_og_url = "https://kipuai.com"
-    meta_og_image = "images/meta_og_image.png"
+    meta_og_image = "/images/meta_og_image.png" # <--- ALSO CORRECTED THIS ONE!
     meta_og_description = "Kipu is your partner to unlock your data & AI potential, and deliver measurable outcomes."
     meta_twitter_card = "summary"
     meta_twitter_site = "@kipuai"
@@ -35,7 +35,7 @@ theme = "hugo-hero-theme"
 [params.hero]
   heading = "Unlock Your Data & AI Potential"
   subheading = "Expert guidance to make your data and AI initiatives deliver measurable outcomes"
-  background = "images/officecollab.png"
+  background = "/images/officecollab.png" # <--- ALSO CORRECTED THIS ONE!
 
 [[menu.main]]
   name = "About"
