@@ -22,7 +22,7 @@
   align-items: center;
 
   img {
-    max-height: 120px; // ⬆️ Temporary test height to check visual scaling
+    max-height: 100px; // ✅ Ajustado para mejor presencia
     height: auto;
     width: auto;
     display: block;
@@ -41,7 +41,7 @@
   display: none;
 
   img {
-    max-height: 48px;
+    max-height: 64px; // ✅ Más alto para móvil
     height: auto;
     width: auto;
     display: block;
