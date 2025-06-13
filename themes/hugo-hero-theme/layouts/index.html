@@ -4,32 +4,38 @@
 {{ define "header_classes" }}header-transparent{{ end }}
 
 {{ define "meta_tags" }}
-<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
-<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
-<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
-<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
-<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
-<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
-<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+  <meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
+  <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+  <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+  <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+  <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+  <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+  <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+  <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+  <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
 {{ end }}
 
 {{ define "main" }}
 
 <!-- ✅ Custom Hero Section -->
-<section class="hero" style='background-image: url("{{ "images/officecollab.png" | relURL }}");'>
-  <div class="hero-content">
-    <h1>Unlock Your Data & AI Potential</h1>
-    <p>Expert guidance to make your data and AI initiatives deliver measurable outcomes</p>
-    <a href="/contact" class="hero-cta">Request a Free Consultation</a>
+<section class="hero" style="background-image: url({{ "images/officecollab.png" | relURL }}); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 6rem 2rem;">
+  <div class="hero-content" style="max-width: 960px; margin: 0 auto; text-align: center; color: white;">
+    <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Fraunces', serif; font-weight: 700;">
+      Unlock Your Data & AI Potential
+    </h1>
+    <p style="font-size: 1.25rem; font-family: 'Inter', sans-serif; margin-top: 1rem; margin-bottom: 2rem;">
+      Expert guidance to make your data and AI initiatives deliver measurable outcomes
+    </p>
+    <a href="/contact" class="hero-cta" style="padding: 0.75rem 1.5rem; border: 2px solid white; color: white; text-transform: uppercase; font-family: 'Inter', sans-serif; letter-spacing: 0.05em; transition: background-color 0.3s ease, color 0.3s ease;">
+      Request a Free Consultation
+    </a>
   </div>
 </section>
 
 <!-- ✅ Services Section with Background Image and Transparent White Overlay -->
 {{ $services := where (where .Site.RegularPages "Type" "services") ".Params.featured" true }}
 {{ if gt (len $services) 0 }}
-<section id="our-services" style="position: relative; background-image: url('{{ "images/joel-filipe-VuwAfoHpxgs-unsplash.jpeg" | relURL }}'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 4rem 2rem;">
+<section id="our-services" style="position: relative; background-image: url({{ "images/joel-filipe-VuwAfoHpxgs-unsplash.jpeg" | relURL }}); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 4rem 2rem;">
   <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.75); z-index: 1;"></div>
   <div class="container" style="position: relative; z-index: 2;">
     <div class="row justify-content-center">
