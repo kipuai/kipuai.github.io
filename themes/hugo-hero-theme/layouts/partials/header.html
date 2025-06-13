@@ -2,12 +2,12 @@
   <div class="container">
     <div class="logo">
       <a href="{{ .Site.BaseURL }}" style="display: flex; align-items: center;">
-        <img src='{{ "images/kipu_main.png" | relURL }}' alt="Kipu logo">
+        <img src="{{ "images/kipu_main.png" | relURL }}" alt="Kipu logo" style="max-height: 64px;">
       </a>
     </div>
     <div class="logo-mobile">
       <a href="{{ .Site.BaseURL }}" style="display: flex; align-items: center;">
-        <img src='{{ "images/kipu_main.png" | relURL }}' alt="Kipu logo">
+        <img src="{{ "images/kipu_main.png" | relURL }}" alt="Kipu logo" style="max-height: 64px;">
       </a>
     </div>
     {{ partial "main-menu.html" . }}
