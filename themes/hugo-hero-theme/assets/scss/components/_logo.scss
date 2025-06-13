@@ -1,42 +1,57 @@
+// This file controls the styling for the main and mobile logos.
+// We are ensuring the main logo (.logo) is always visible
+// and the mobile logo (.logo-mobile) is always hidden,
+// overriding any responsive behavior that might hide them.
+
 .logo {
-  // Changed this from 'display: none;' to 'display: block;'
+  // Sets the main logo to be a block element, making it visible.
+  // This overrides any default 'display: none;' that might have been present
+  // for small screens.
   display: block;
 
+  // This media query ensures the desktop logo remains a block element
+  // on 'sm' (small) breakpoints and larger. It's technically redundant
+  // with 'display: block;' above if you always want it visible,
+  // but it doesn't cause harm and might be part of other styling.
   @include media-breakpoint-up(sm) {
-    // This 'display: block;' here becomes slightly redundant but doesn't hurt.
-    // It ensures visibility on 'sm' breakpoints and above.
     display: block;
     max-width: none;
   }
 
+  // Styles for the image itself within the .logo container
   img {
-    height: auto;
-    width: auto;
-    max-height: 100px; // ✅ Ajusta aquí el tamaño final
+    height: auto; // Maintain aspect ratio
+    width: auto;  // Maintain aspect ratio
+    max-height: 100px; // Set a maximum height for the desktop logo
   }
 
+  // Styles for the link wrapping the logo image
   a {
     display: block;
-    text-decoration: none;
+    text-decoration: none; // Remove underline from the logo link
   }
 }
 
 .logo-mobile {
-  // Changed this from 'display: block;' to 'display: none;'
+  // This sets the mobile logo to be hidden by default on all screens.
+  // This is desired if you only want to use the main logo.
   display: none;
-  padding: 10px 0;
+  padding: 10px 0; // Padding for the mobile logo (will be hidden now)
 
+  // This media query ensures the mobile logo remains hidden on 'sm'
+  // breakpoints and larger.
   @include media-breakpoint-up(sm) {
-    // Ensures it stays hidden on larger screens as well
     display: none;
   }
 
+  // Styles for the image within the .logo-mobile container (will be hidden now)
   img {
-    max-height: 64px;
+    max-height: 64px; // Maximum height for the mobile logo
     height: auto;
     width: auto;
   }
 
+  // Styles for the link wrapping the mobile logo image (will be hidden now)
   a {
     display: block;
   }
