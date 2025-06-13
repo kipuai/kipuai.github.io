@@ -11,11 +11,11 @@ theme = "hugo-hero-theme"
 [params]
   google_analytics_id = ""
 
-[params.logo]
-desktop = "images/logo-kipu.png"
-desktop_height = "29px"
-desktop_width = "217px"
-alt = "Kipu"
+#[params.logo]
+#desktop = "images/logo-kipu.png"
+#desktop_height = "29px"
+#desktop_width = "217px"
+#alt = "Kipu"
 
 
 [params.homepage_meta_tags]
