@@ -12,14 +12,11 @@ theme = "hugo-hero-theme"
   google_analytics_id = ""
 
 [params.logo]
-  name = "Kipu"
-  mobile = "images/logo.png"
-  mobile_height = "50px"
-  mobile_width = "auto"
-  desktop = "images/logo.png"
-  desktop_height = "100px"
-  desktop_width = "auto"
-  alt = "Kipu"
+desktop = "images/logo-kipu.png"
+desktop_height = "29px"
+desktop_width = "217px"
+alt = "Kipu"
+
 
 [params.homepage_meta_tags]
     meta_description = "Kipu is your partner to unlock your data & AI potential, and deliver measurable outcomes."
