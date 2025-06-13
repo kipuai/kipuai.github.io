@@ -1,32 +1,41 @@
 .logo {
   display: none;
+
   @include media-breakpoint-up(sm) {
     display: block;
-    width: 120px;
+    max-width: none;         // remove width limit
   }
+
   img {
-    width: 100%;
+    max-height: 80px;        // adjust height here
     height: auto;
+    width: auto;             // don’t constrain width
   }
+
   a {
     display: block;
-    width: 100%;
-    height: 100%;
-    font-size: 28px;  // Added this line
-    text-decoration: none;  // Optional: removes underline from link
+    font-size: 28px;
+    text-decoration: none;
   }
 }
+
 .logo-mobile {
   display: block;
-  width: 40px;
-  padding: 10px 0 10px 0;
+  padding: 10px 0;
+
+  width: auto;                // allow natural sizing
+  max-width: 80px;
+
   @include media-breakpoint-up(sm) {
     display: none;
   }
+
   img {
-    width: 100%;
+    max-height: 64px;
     height: auto;
+    width: auto;
   }
+
   a {
     display: block;
     width: 100%;
