@@ -13,10 +13,10 @@ theme = "hugo-hero-theme"
 
 [params.logo]
   name = "Kipu"
-  mobile = "/images/logo.png"   # <--- CORRECTED!
+  mobile = "images/logo.png"
   mobile_height = "50px"
   mobile_width = "auto"
-  desktop = "/images/logo.png"  # <--- CORRECTED!
+  desktop = "images/logo.png"
   desktop_height = "100px"
   desktop_width = "auto"
   alt = "Kipu"
