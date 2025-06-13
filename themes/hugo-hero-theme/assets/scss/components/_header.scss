@@ -1,26 +1,110 @@
 .header {
-  color: $primary;
-  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  min-height: 72px;
+}
+
+.header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 15px rgba(50, 50, 93, 0.2);
-  height: 60px;
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &.header-absolute {
-    position: absolute;
-    z-index: 100;
-    width: 100%;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+// 🔰 Logo (Desktop)
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 120px; // ⬆️ Temporary test height to check visual scaling
+    height: auto;
+    width: auto;
+    display: block;
+    vertical-align: middle;
+    transition: transform 0.2s ease, filter 0.2s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+    }
   }
 }
-// .lock-scroll {
-//   .header {
-//     &.header-absolute {
-//       position: static;
-//     }
-//   }
-// }
+
+// 📱 Logo (Mobile)
+.logo-mobile {
+  display: none;
+
+  img {
+    max-height: 48px;
+    height: auto;
+    width: auto;
+    display: block;
+    vertical-align: middle;
+    transition: transform 0.2s ease, filter 0.2s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+    }
+  }
+}
+
+// 🔠 Navigation
+.main-menu {
+  font-family: $font-body;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-left: 2rem;
+
+      a {
+        font-size: 1.125rem;
+        color: $color-primary;
+        text-decoration: none;
+        line-height: 1.3;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $color-highlight;
+        }
+      }
+
+      &:first-child {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+// 📱 Mobile Responsiveness
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-menu ul li {
+    margin: 0.5rem 0;
+  }
+}

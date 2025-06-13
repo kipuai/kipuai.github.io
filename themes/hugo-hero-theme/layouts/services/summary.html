@@ -1,16 +1,25 @@
-<div class="service service-summary">
+<div class="service service-summary text-center px-4 mb-5">
   {{ if .Params.icon }}
-  <div class="service-image">
-    <img height="80" width="80" src="{{ .Params.icon | relURL }}" alt="{{ .Title }}" />
+  <div class="service-image mb-4">
+    <img 
+      src="{{ .Params.icon | relURL }}" 
+      alt="{{ .Title }}" 
+      loading="lazy" 
+      style="height: 120px; width: auto; display: inline-block;" />
   </div>
   {{ end }}
-  <div class="service-content">
-    <!-- <h2 class="service-title">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2> -->
-    <h2 class="service-title text-primary">{{ .Title }}</h2>
-    <div class="mb-3">
-      {{ .Params.HomeDescription }}
-    </div>
+
+  <div class="service-content mx-auto" style="max-width: 620px;">
+    <h3 
+      class="service-title text-primary mb-3" 
+      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      {{ .Title }}
+    </h3>
+
+    <p 
+      class="service-description text-muted mb-0" 
+      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      {{ .Params.HomeDescription | markdownify }}
+    </p>
   </div>
 </div>

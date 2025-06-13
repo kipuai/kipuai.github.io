@@ -1,0 +1,72 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: $font-body;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 45, 52, 0.5); // $color-primary w/ 50% opacity
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  h1,
+  h2 {
+    font-family: $font-header;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background-color: $color-cta;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: lighten($color-cta, 8%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem;
+    text-align: center;
+
+    .hero-content {
+      margin: 0 auto;
+    }
+  }
+}

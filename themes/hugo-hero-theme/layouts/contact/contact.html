@@ -1,40 +1,61 @@
-{{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page-contact{{ end }}
-{{ define "header_classes" }}{{ end }}
-
 {{ define "main" }}
-<div class="intro intro-small">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>{{ .Title }}</h1>
-            </div>
-        </div>
+
+<!-- ✅ Contact Page Section -->
+<section style="background-color: #F7F7F7; padding: 4rem 2rem;">
+
+  <div class="container" style="max-width: 960px; margin: 0 auto;">
+
+    <!-- 🔹 Page Title -->
+    <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: #2A2D34; text-align: center; margin-bottom: 1.5rem;">
+      Contact
+    </h1>
+
+    <!-- 💬 Intro Text -->
+    <p style="font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1.6; color: #444; text-align: center; margin-bottom: 2rem;">
+      We offer a free consultation for all new clients.<br />
+      The best way to reach us is via email.<br />
+      <strong>Email: <a href="mailto:contact@kipuai.com" style="color: #DE3C4B;">contact@kipuai.com</a></strong>
+    </p>
+
+    <!-- 🖼️ Hero Image -->
+    <div style="width: 100%; margin-bottom: 2.5rem;">
+      <img src="{{ "images/meeting.jpg" | relURL }}"
+           alt="Contact"
+           style="width: 100%; max-height: 480px; object-fit: cover; border-radius: 8px;" />
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-8">
-            {{ .Content }}  <p>{{ .Site.Data.contact.freeConsultation }}</p>  <ul>
-                {{ if .Site.Data.contact.email }}
-                <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
-                        {{ .Site.Data.contact.email }}</a></li>
-                {{ end }}
-            </ul>
-            {{ if .Site.Data.contact.hours }}
-            <h4 class="mt-4">Business Hours</h4>
-            <table class="table table-sm opening-hours-table">
-                {{ range .Site.Data.contact.hours }}
-                <tr>
-                    <td class="day font-weight-bold">{{ .day }}</td>
-                    <td class="opens">{{ .open }}</td>
-                    <td>-</td>
-                    <td class="closes">{{ .close }}</td>
-                </tr>
-                {{ end }}
-            </table>
-            {{ end }}
-        </div>
-    </div>
-</div>
+
+    <!-- ✉️ Contact Form -->
+    <form style="font-family: 'Inter', sans-serif; color: #2A2D34;">
+
+      <!-- Name -->
+      <div style="margin-bottom: 1.25rem;">
+        <label for="name" style="display: block; margin-bottom: 0.5rem;">Name</label>
+        <input type="text" id="name" name="name"
+               style="width: 100%; padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: 1px solid #CCC;">
+      </div>
+
+      <!-- Email -->
+      <div style="margin-bottom: 1.25rem;">
+        <label for="email" style="display: block; margin-bottom: 0.5rem;">Email</label>
+        <input type="email" id="email" name="email"
+               style="width: 100%; padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: 1px solid #CCC;">
+      </div>
+
+      <!-- Message -->
+      <div style="margin-bottom: 1.25rem;">
+        <label for="message" style="display: block; margin-bottom: 0.5rem;">Message</label>
+        <textarea id="message" name="message" rows="6"
+                  style="width: 100%; padding: 0.75rem; font-size: 1rem; border-radius: 6px; border: 1px solid #CCC;"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit"
+              style="background-color: #DE3C4B; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
+
 {{ end }}
