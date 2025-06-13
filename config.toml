@@ -13,12 +13,12 @@ theme = "hugo-hero-theme"
 
 [params.logo]
   name = "Kipu"
-  mobile = "images/favicon.png"
-  mobile_height = "36px"
-  mobile_width = "36px"
-  desktop = "images/kipumain.png"     # <-- ✅ This must match exactly
-  desktop_height = "29px"
-  desktop_width = ""
+  mobile = "images/logo.png"
+  mobile_height = "50px"
+  mobile_width = "auto"
+  desktop = "images/logo.png"
+  desktop_height = "100px"
+  desktop_width = "auto"
   alt = "Kipu"
 
 [params.homepage_meta_tags]

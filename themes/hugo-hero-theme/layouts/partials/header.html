@@ -1,19 +1,24 @@
 <div class="header header-absolute">
   <div class="container">
 
-    <!-- Desktop Logo -->
-    <div class="logo">
-      <a href="{{ .Site.BaseURL | relURL }}">
-        <img src="{{ "images/logo.png" | relURL }}" alt="Kipu logo" style="height: 80px; width: auto;">
-      </a>
-    </div>
+<!-- Desktop Logo -->
+<div class="logo">
+  <a href="{{ .Site.BaseURL | relURL }}">
+    <img src="{{ .Site.Params.logo.desktop | relURL }}"
+         alt="{{ .Site.Params.logo.alt }}"
+         style="max-height: {{ .Site.Params.logo.desktop_height }}; width: {{ .Site.Params.logo.desktop_width }};">
+  </a>
+</div>
 
-    <!-- Mobile Logo -->
-    <div class="logo-mobile">
-      <a href="{{ .Site.BaseURL | relURL }}">
-        <img src="{{ "images/logo.png" | relURL }}" alt="Kipu logo" style="height: 80px; width: auto;">
-      </a>
-    </div>
+<!-- Mobile Logo -->
+<div class="logo-mobile">
+  <a href="{{ .Site.BaseURL | relURL }}">
+    <img src="{{ .Site.Params.logo.mobile | relURL }}"
+         alt="{{ .Site.Params.logo.alt }}"
+         style="max-height: {{ .Site.Params.logo.mobile_height }}; width: {{ .Site.Params.logo.mobile_width }};">
+  </a>
+</div>
+
 
     {{ partial "main-menu.html" . }}
     {{ partial "hamburger.html" . }}
