@@ -15,44 +15,49 @@
       Our Team
     </h1>
     <h2 style="font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: #2A2D34; text-align: center; margin-bottom: 1rem;">
-      Proven Expertise, Real-World Impact
+      Proven Experience, Strategic Clarity
     </h2>
     <p style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.5; color: #444; max-width: 720px; text-align: center; margin: 0 auto;">
-      At Kipu, we bring a unique blend of deep industry experience and entrepreneurial spirit to deliver exceptional data-driven solutions. Our team is comprised of seasoned professionals who have successfully applied cutting-edge data science and machine learning techniques to solve complex business problems at scale.
+      At Kipu, we bring the perspective of those who’ve built, scaled, and advised companies across industries and stages. Our experience spans Fortune 500 firms, global consultancies, and full startup journeys from idea to exit. We deliver clear, actionable guidance to help leaders move forward with confidence and precision.
     </p>
   </div>
 </section>
 
-<!-- ✅ Partner Sections – Flex Layout with Styled Accents -->
-{{ $headless := .Site.GetPage "/pages/about" }}
-{{ $subpages := $headless.Resources.ByType "page" }}
-{{ $subpages := sort $subpages ".Params.weight" }}
-{{ range $subpages }}
+<!-- ✅ Partner Sections – Side-by-Side Layout with Smaller Fonts -->
 <section class="strip" style="padding: 3rem 2rem; border-top: 1px solid #EDEDED;">
-  <div class="container" style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 2rem;">
+  <div class="container" style="max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
 
-    <!-- ✅ Partner Image -->
-    <div style="flex: 0 0 300px;">
-      <img src="{{ .Params.background | relURL }}" alt="{{ .Title }}"
-           style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;">
-    </div>
+    {{ $headless := .Site.GetPage "/pages/about" }}
+    {{ $subpages := $headless.Resources.ByType "page" }}
+    {{ $subpages := sort $subpages ".Params.weight" }}
+    {{ range $subpages }}
+    <div style="flex: 0 1 48%; display: flex; flex-direction: column; align-items: center; text-align: left;">
 
-    <!-- ✅ Partner Bio -->
-    <div style="flex: 1; min-width: 300px;">
-      <h3 style="font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 600; color: #2A2D34; margin-bottom: 0.25rem;">
+      <!-- 🔹 Partner Image -->
+      <div style="height: 360px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+        <img src="{{ .Params.background | relURL }}" alt="{{ .Title }}"
+             style="max-height: 100%; width: auto; border-radius: 8px; object-fit: contain;">
+      </div>
+
+      <!-- 🔹 Partner Name -->
+      <h3 style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: #2A2D34; margin-bottom: 0.25rem;">
         {{ .Title }}
       </h3>
-      <p style="font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; color: #3F72AF; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;">
+
+      <!-- 🔹 Partner Title -->
+      <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; color: #3F72AF; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;">
         Partner
       </p>
-      <div style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.5; color: #444; max-width: 680px;">
+
+      <!-- 🔹 Partner Bio -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.4; color: #444; max-width: 680px;">
         {{ .Content }}
       </div>
     </div>
+    {{ end }}
 
   </div>
 </section>
-{{ end }}
 
 {{ .Content }}
 

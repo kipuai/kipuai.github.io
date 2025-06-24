@@ -1,5 +1,5 @@
 ---
-title: 'Your Trusted Partner in Data and AI'
+title: 'A Different Kind of Partner'
 # weight: 1
 background: 'images/office-collab.png'
 #background: 'images/joel-filipe-VuwAfoHpxgs-unsplash.jpeg'
@@ -7,4 +7,4 @@ background: 'images/office-collab.png'
 # buttonLink: 'work'
 ---
 
-At Kipu, we help companies unlock the potential of data and AI to drive innovation, improve decision-making, and achieve sustainable growth. With over two decades of combined experience, our team of experts provides strategic consulting and advisory services tailored to your specific needs.
+Kipu was born with a simple idea: smart decisions require clear direction. With backgrounds in Fortune 500 firms, global consultancies, and high-growth startups, we deliver strategic support with a founder’s mindset—rigorous, agile, and truly collaborative.
