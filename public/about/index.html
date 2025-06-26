@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>About - Kipu</title>
@@ -17,7 +17,7 @@
     posthog.init('phc_oUnGynedFnH500uxhFpcBxSX6BwYFB9ah22rXB7YXey', {
       api_host: 'https://us.i.posthog.com',
       person_profiles: 'identified_only',
-    })
+    });
   </script>
 </head>
 
@@ -62,9 +62,8 @@
 
         <!-- Jorge -->
         <div style="flex: 0 1 48%; display: flex; flex-direction: column; align-items: center; text-align: left;">
-          <div style="height: auto; max-height: 360px; display: flex; align-items: flex-start; justify-content: center; margin-bottom: 1rem;">
-            <img src="/images/jorge_2.jpg" alt="Jorge Escobedo"
-                 style="max-height: 360px; width: auto; border-radius: 8px;">
+          <div style="width: 100%; aspect-ratio: 1135 / 1600; overflow: hidden; border-radius: 8px; margin-bottom: 1rem;">
+            <img src="/images/jorge_2.jpg" alt="Jorge Escobedo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
           </div>
           <h3 style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: #2A2D34; margin-bottom: 0.25rem;">Jorge Escobedo</h3>
           <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; color: #3F72AF; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;">Partner</p>
@@ -75,9 +74,8 @@
 
         <!-- Lucho -->
         <div style="flex: 0 1 48%; display: flex; flex-direction: column; align-items: center; text-align: left;">
-          <div style="height: auto; max-height: 360px; display: flex; align-items: flex-start; justify-content: center; margin-bottom: 1rem;">
-            <img src="/images/lucho.jpeg" alt="Lucho Escobedo"
-                 style="max-height: 360px; width: auto; border-radius: 8px;">
+          <div style="width: 100%; aspect-ratio: 1135 / 1600; overflow: hidden; border-radius: 8px; margin-bottom: 1rem;">
+            <img src="/images/lucho.jpeg" alt="Lucho Escobedo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
           </div>
           <h3 style="font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: #2A2D34; margin-bottom: 0.25rem;">Lucho Escobedo</h3>
           <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; color: #3F72AF; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;">Partner</p>
@@ -96,8 +94,8 @@
         <div class="col-12">
           <div class="footer-inner">
             <ul class="footer-menu">
-              <li><a href="http://localhost:1313/">Home</a></li>
-              <li><a href="http://localhost:1313/contact">Contact</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/contact">Contact</a></li>
               <li class="copyright">© 2025 Kipu</li>
             </ul>
           </div>
