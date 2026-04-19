@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>What We Do - Kipu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="http://localhost:1313/favicon.png">
+  <link rel="icon" href="http://localhost:1314/favicon.png">
 
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
@@ -49,6 +49,9 @@
       </a>
     </li>
     
+    <li class="menu-item-lang" style="padding:0.5rem 0;">
+      <button id="lang-toggle-mobile" data-current-lang="en" style="background:none;border:1px solid #2A2D34;color:#2A2D34;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:3px;line-height:1;">ES</button>
+    </li>
   </ul>
 </div>
   <div id="wrapper" class="wrapper">
@@ -87,6 +90,9 @@
       </a>
     </li>
     
+    <li class="menu-item-lang">
+      <button id="lang-toggle" data-current-lang="en" style="background:none;border:1px solid currentColor;color:inherit;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:3px;line-height:1;">ES</button>
+    </li>
   </ul>
 </div>
     <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Toggle Menu">
@@ -128,16 +134,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Strategic Guidance
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Strategic Guidance</span>
+      <span data-lang="es" style="display:none;">Asesoría Estratégica</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      We partner with founders and senior teams to define business priorities, identify opportunities, and translate them into clear, actionable roadmaps.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">We partner with founders and senior teams to define business priorities, identify opportunities, and translate them into clear, actionable roadmaps.</span>
+      <span data-lang="es" style="display:none;">Nos asociamos con fundadores y equipos directivos para definir prioridades de negocio, identificar oportunidades y traducirlas en hojas de ruta claras y accionables.</span>
     </p>
   </div>
 </div>
@@ -155,16 +159,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Technology &amp; Data Advisory
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Technology &amp; Data Advisory</span>
+      <span data-lang="es" style="display:none;">Asesoría en Tecnología y Datos</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      From data architecture to AI implementation, we provide practical and scalable recommendations rooted in real-world experience.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">From data architecture to AI implementation, we provide practical and scalable recommendations rooted in real-world experience.</span>
+      <span data-lang="es" style="display:none;">Desde la arquitectura de datos hasta la implementación de IA, brindamos recomendaciones prácticas y escalables basadas en experiencia real.</span>
     </p>
   </div>
 </div>
@@ -182,16 +184,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Team &amp; Capability Building
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Team &amp; Capability Building</span>
+      <span data-lang="es" style="display:none;">Desarrollo de Equipos y Capacidades</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      We support your internal growth by helping define roles, recruit talent, and shape workflows that scale with your business.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">We support your internal growth by helping define roles, recruit talent, and shape workflows that scale with your business.</span>
+      <span data-lang="es" style="display:none;">Apoyamos tu crecimiento interno ayudando a definir roles, reclutar talento y estructurar flujos de trabajo que escalen con tu negocio.</span>
     </p>
   </div>
 </div>
@@ -209,16 +209,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Workshops &amp; Courses
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Workshops &amp; Courses</span>
+      <span data-lang="es" style="display:none;">Talleres y Cursos</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      We offer workshops and courses to strengthen strategy, innovation, and technical fluency—tailored for leaders, operators, and university cohorts.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">We offer workshops and courses to strengthen strategy, innovation, and technical fluency—tailored for leaders, operators, and university cohorts.</span>
+      <span data-lang="es" style="display:none;">Ofrecemos talleres y cursos para fortalecer la estrategia, la innovación y la capacidad técnica—diseñados para líderes, operadores y cohortes universitarias.</span>
     </p>
   </div>
 </div>
@@ -236,9 +234,9 @@
         <div class="footer-inner">
           
           <ul class="footer-menu">
-            <li><a href="http://localhost:1313/">Home</a></li>
-            <li><a href="http://localhost:1313/contact">Contact</a></li>
-            <li class="copyright">© 2025 Kipu</li>
+            <li><a href="http://localhost:1314/" data-i18n="footerHome">Home</a></li>
+            <li><a href="http://localhost:1314/contact" data-i18n="footerContact">Contact</a></li>
+            <li class="copyright">© 2026 Kipu</li>
           </ul>
         </div>
       </div>
@@ -257,5 +255,6 @@
 
   
 
+  <script src="/js/lang.js"></script>
 </body>
 </html>

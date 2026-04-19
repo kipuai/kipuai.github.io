@@ -11,13 +11,13 @@
     <!-- 🔹 Accent Bar -->
     <div style="height: 4px; width: 60px; background-color: #3F72AF; border-radius: 2px; margin: 0 auto 1rem auto;"></div>
     
-    <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: #2A2D34; text-align: center; margin-bottom: 1rem;">
+    <h1 data-i18n="aboutHeading" style="font-family: ‘Fraunces’, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: #2A2D34; text-align: center; margin-bottom: 1rem;">
       Our Team
     </h1>
-    <h2 style="font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: #2A2D34; text-align: center; margin-bottom: 1rem;">
+    <h2 data-i18n="aboutSubheading" style="font-family: ‘Fraunces’, serif; font-size: 1.25rem; font-weight: 600; color: #2A2D34; text-align: center; margin-bottom: 1rem;">
       Proven Experience, Strategic Clarity
     </h2>
-    <p style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.5; color: #444; max-width: 720px; text-align: center; margin: 0 auto;">
+    <p data-i18n="aboutIntro" style="font-family: ‘Inter’, sans-serif; font-size: 1rem; line-height: 1.5; color: #444; max-width: 720px; text-align: center; margin: 0 auto;">
       At Kipu, we bring the perspective of those who’ve built, scaled, and advised companies across industries and stages. Our experience spans Fortune 500 firms, global consultancies, and full startup journeys from idea to exit. We deliver clear, actionable guidance to help leaders move forward with confidence and precision.
     </p>
   </div>
@@ -45,13 +45,16 @@
       </h3>
 
       <!-- 🔹 Partner Title -->
-      <p style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; color: #3F72AF; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;">
+      <p data-i18n="partnerLabel" style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; color: #3F72AF; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem;">
         Partner
       </p>
 
       <!-- 🔹 Partner Bio -->
       <div style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.4; color: #444; max-width: 680px;">
-        {{ .Content }}
+        <div data-lang="en">{{ .Content }}</div>
+        {{ if .Params.bioEs }}
+        <div data-lang="es" style="display:none;">{{ .Params.bioEs }}</div>
+        {{ end }}
       </div>
     </div>
     {{ end }}

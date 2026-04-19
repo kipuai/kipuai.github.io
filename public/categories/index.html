@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Categories - Kipu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="http://localhost:1313/favicon.png">
+  <link rel="icon" href="http://localhost:1314/favicon.png">
 
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
@@ -49,6 +49,9 @@
       </a>
     </li>
     
+    <li class="menu-item-lang" style="padding:0.5rem 0;">
+      <button id="lang-toggle-mobile" data-current-lang="en" style="background:none;border:1px solid #2A2D34;color:#2A2D34;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:3px;line-height:1;">ES</button>
+    </li>
   </ul>
 </div>
   <div id="wrapper" class="wrapper">
@@ -87,6 +90,9 @@
       </a>
     </li>
     
+    <li class="menu-item-lang">
+      <button id="lang-toggle" data-current-lang="en" style="background:none;border:1px solid currentColor;color:inherit;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:3px;line-height:1;">ES</button>
+    </li>
   </ul>
 </div>
     <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Toggle Menu">
@@ -125,9 +131,9 @@
         <div class="footer-inner">
           
           <ul class="footer-menu">
-            <li><a href="http://localhost:1313/">Home</a></li>
-            <li><a href="http://localhost:1313/contact">Contact</a></li>
-            <li class="copyright">© 2025 Kipu</li>
+            <li><a href="http://localhost:1314/" data-i18n="footerHome">Home</a></li>
+            <li><a href="http://localhost:1314/contact" data-i18n="footerContact">Contact</a></li>
+            <li class="copyright">© 2026 Kipu</li>
           </ul>
         </div>
       </div>
@@ -146,5 +152,6 @@
 
   
 
+  <script src="/js/lang.js"></script>
 </body>
 </html>

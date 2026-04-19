@@ -1,5 +1,6 @@
 ---
 title: 'Workshops & Courses'
+titleEs: 'Talleres y Cursos'
 date: 2018-11-28T15:15:34+10:00
 icon: 'images/services/workshop.svg' # Replace with your preferred icon path
 featured: true
@@ -9,6 +10,7 @@ heroHeading: 'Workshops & Courses'
 heroSubHeading: 'We offer workshops and courses to strengthen strategy, innovation, and technical fluency—tailored for leaders, operators, and university cohorts.'
 heroBackground: 'images/services/service2.jpg' # Ensure the image exists in /static/images/services/
 homeDescription: 'We offer workshops and courses to strengthen strategy, innovation, and technical fluency—tailored for leaders, operators, and university cohorts.'
+homeDescriptionEs: 'Ofrecemos talleres y cursos para fortalecer la estrategia, la innovación y la capacidad técnica—diseñados para líderes, operadores y cohortes universitarias.'
 ---
 
 TBA

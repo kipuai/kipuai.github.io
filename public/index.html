@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.140.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.140.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Kipu</title>
@@ -18,7 +18,7 @@
   <meta name="twitter:site" content="@kipuai" />
   <meta name="twitter:creator" content="@kipuai" />
 
-  <link rel="icon" href="http://localhost:1313/favicon.png">
+  <link rel="icon" href="http://localhost:1314/favicon.png">
 
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
@@ -60,6 +60,9 @@
       </a>
     </li>
     
+    <li class="menu-item-lang" style="padding:0.5rem 0;">
+      <button id="lang-toggle-mobile" data-current-lang="en" style="background:none;border:1px solid #2A2D34;color:#2A2D34;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:3px;line-height:1;">ES</button>
+    </li>
   </ul>
 </div>
   <div id="wrapper" class="wrapper">
@@ -98,6 +101,9 @@
       </a>
     </li>
     
+    <li class="menu-item-lang">
+      <button id="lang-toggle" data-current-lang="en" style="background:none;border:1px solid currentColor;color:inherit;cursor:pointer;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;padding:0.25rem 0.6rem;border-radius:3px;line-height:1;">ES</button>
+    </li>
   </ul>
 </div>
     <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Toggle Menu">
@@ -114,13 +120,13 @@
 
 <section class="hero" style="background-image: url(/images/officecollab.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 6rem 2rem;">
   <div class="hero-content" style="max-width: 960px; margin: 0 auto; text-align: center; color: white;">
-    <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Fraunces', serif; font-weight: 700;">
+    <h1 data-i18n="heroTitle" style="font-size: clamp(2rem, 5vw, 3rem); font-family: 'Fraunces', serif; font-weight: 700;">
       Technology & Strategy
     </h1>
-    <p style="font-size: 1.25rem; font-family: 'Inter', sans-serif; margin-top: 1rem; margin-bottom: 2rem;">
+    <p data-i18n="heroSubtitle" style="font-size: 1.25rem; font-family: 'Inter', sans-serif; margin-top: 1rem; margin-bottom: 2rem;">
       Expert partnership for ambitious companies building with purpose
     </p>
-    <a href="/contact" class="hero-cta" style="padding: 0.75rem 1.5rem; border: 2px solid white; color: white; text-transform: uppercase; font-family: 'Inter', sans-serif; letter-spacing: 0.05em; transition: background-color 0.3s ease, color 0.3s ease;">
+    <a href="/contact" class="hero-cta" data-i18n="heroCta" style="padding: 0.75rem 1.5rem; border: 2px solid white; color: white; text-transform: uppercase; font-family: 'Inter', sans-serif; letter-spacing: 0.05em; transition: background-color 0.3s ease, color 0.3s ease;">
       Request a Free Consultation
     </a>
   </div>
@@ -134,8 +140,8 @@
   <div class="container" style="position: relative; z-index: 2;">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h2 class="text-center mb-6" style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; color: #2A2D34;">
-          What We Do
+        <h2 data-i18n="servicesHeading" class="text-center mb-6" style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; color: #2A2D34;">
+          Our Services
         </h2>
       </div>
     </div>
@@ -154,16 +160,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Strategic Guidance
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Strategic Guidance</span>
+      <span data-lang="es" style="display:none;">Asesoría Estratégica</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      We partner with founders and senior teams to define business priorities, identify opportunities, and translate them into clear, actionable roadmaps.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">We partner with founders and senior teams to define business priorities, identify opportunities, and translate them into clear, actionable roadmaps.</span>
+      <span data-lang="es" style="display:none;">Nos asociamos con fundadores y equipos directivos para definir prioridades de negocio, identificar oportunidades y traducirlas en hojas de ruta claras y accionables.</span>
     </p>
   </div>
 </div>
@@ -183,16 +187,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Technology &amp; Data Advisory
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Technology &amp; Data Advisory</span>
+      <span data-lang="es" style="display:none;">Asesoría en Tecnología y Datos</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      From data architecture to AI implementation, we provide practical and scalable recommendations rooted in real-world experience.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">From data architecture to AI implementation, we provide practical and scalable recommendations rooted in real-world experience.</span>
+      <span data-lang="es" style="display:none;">Desde la arquitectura de datos hasta la implementación de IA, brindamos recomendaciones prácticas y escalables basadas en experiencia real.</span>
     </p>
   </div>
 </div>
@@ -212,16 +214,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Team &amp; Capability Building
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Team &amp; Capability Building</span>
+      <span data-lang="es" style="display:none;">Desarrollo de Equipos y Capacidades</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      We support your internal growth by helping define roles, recruit talent, and shape workflows that scale with your business.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">We support your internal growth by helping define roles, recruit talent, and shape workflows that scale with your business.</span>
+      <span data-lang="es" style="display:none;">Apoyamos tu crecimiento interno ayudando a definir roles, reclutar talento y estructurar flujos de trabajo que escalen con tu negocio.</span>
     </p>
   </div>
 </div>
@@ -241,16 +241,14 @@
   
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      Workshops &amp; Courses
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">Workshops &amp; Courses</span>
+      <span data-lang="es" style="display:none;">Talleres y Cursos</span>
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      We offer workshops and courses to strengthen strategy, innovation, and technical fluency—tailored for leaders, operators, and university cohorts.
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">We offer workshops and courses to strengthen strategy, innovation, and technical fluency—tailored for leaders, operators, and university cohorts.</span>
+      <span data-lang="es" style="display:none;">Ofrecemos talleres y cursos para fortalecer la estrategia, la innovación y la capacidad técnica—diseñados para líderes, operadores y cohortes universitarias.</span>
     </p>
   </div>
 </div>
@@ -265,13 +263,13 @@
 
 <section style="background-color: #2A2D34; padding: 4rem 2rem;">
   <div class="container text-center" style="max-width: 960px; margin: 0 auto;">
-    <h2 style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; color: #FFFFFF; margin-bottom: 1rem;">
+    <h2 data-i18n="partnerHeading" style="font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 4vw, 2.25rem); font-weight: 600; color: #FFFFFF; margin-bottom: 1rem;">
       A Different Kind of Partner
     </h2>
-    <p style="font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); max-width: 720px; margin: 0 auto 2rem;">
+    <p data-i18n="partnerText" style="font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1.6; color: rgba(255, 255, 255, 0.85); max-width: 720px; margin: 0 auto 2rem;">
       Kipu was founded on a simple idea: smart decisions need clear direction. We offer strategic support with the discipline of large enterprises and the mindset of founders.
     </p>
-    <a href="/about" class="button" style="border: 2px solid #FFFFFF; color: #FFFFFF; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; transition: background-color 0.3s ease, color 0.3s ease;">
+    <a href="/about" class="button" data-i18n="partnerCta" style="border: 2px solid #FFFFFF; color: #FFFFFF; padding: 0.75rem 1.5rem; font-family: 'Inter', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; transition: background-color 0.3s ease, color 0.3s ease;">
       ABOUT US
     </a>
   </div>
@@ -287,9 +285,9 @@
         <div class="footer-inner">
           
           <ul class="footer-menu">
-            <li><a href="http://localhost:1313/">Home</a></li>
-            <li><a href="http://localhost:1313/contact">Contact</a></li>
-            <li class="copyright">© 2025 Kipu</li>
+            <li><a href="http://localhost:1314/" data-i18n="footerHome">Home</a></li>
+            <li><a href="http://localhost:1314/contact" data-i18n="footerContact">Contact</a></li>
+            <li class="copyright">© 2026 Kipu</li>
           </ul>
         </div>
       </div>
@@ -308,5 +306,6 @@
 
   
 
+  <script src="/js/lang.js"></script>
 </body>
 </html>

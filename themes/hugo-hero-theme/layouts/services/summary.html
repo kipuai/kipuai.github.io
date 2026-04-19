@@ -10,16 +10,14 @@
   {{ end }}
 
   <div class="service-content mx-auto" style="max-width: 620px;">
-    <h3 
-      class="service-title text-primary mb-3" 
-      style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
-      {{ .Title }}
+    <h3 class="service-title text-primary mb-3" style="font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600;">
+      <span data-lang="en">{{ .Title }}</span>
+      {{ if .Params.titleEs }}<span data-lang="es" style="display:none;">{{ .Params.titleEs }}</span>{{ end }}
     </h3>
 
-    <p 
-      class="service-description text-muted mb-0" 
-      style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
-      {{ .Params.HomeDescription | markdownify }}
+    <p class="service-description text-muted mb-0" style="font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.6;">
+      <span data-lang="en">{{ .Params.HomeDescription | markdownify }}</span>
+      {{ if .Params.homeDescriptionEs }}<span data-lang="es" style="display:none;">{{ .Params.homeDescriptionEs }}</span>{{ end }}
     </p>
   </div>
 </div>

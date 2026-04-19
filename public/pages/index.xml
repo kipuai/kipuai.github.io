@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Kipu</title>
-    <link>http://localhost:1313/pages/</link>
+    <link>http://localhost:1314/pages/</link>
     <description>Recent content in Pages on Kipu</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 06 Dec 2018 09:29:16 +1000</lastBuildDate>
-    <atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1314/pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:1314/about/</link>
       <pubDate>Thu, 06 Dec 2018 09:29:16 +1000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:1314/about/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     <item>
       <title>History</title>
-      <link>http://localhost:1313/history/</link>
+      <link>http://localhost:1314/history/</link>
       <pubDate>Thu, 06 Dec 2018 09:29:16 +1000</pubDate>
-      <guid>http://localhost:1313/history/</guid>
+      <guid>http://localhost:1314/history/</guid>
       <description>&lt;h1 id=&#34;about-heading&#34;&gt;About Heading&lt;/h1&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;strip bg-cover bg-position-center bg-overlay pt-15 pb-15&#34; style=&#34;background-image: url(&#39; https://source.unsplash.com/zglUlG8k47I/1600x500 &#39;);&#34;&gt;&#xA;  &lt;div class=&#34;container&#34;&gt;&#xA;    &lt;div class=&#34;row&#34;&gt;&#xA;      &lt;div class=&#34;col-12 col-md-6&#34;&gt;&#xA;          &lt;p&gt;Theres no limits, Lorem ipsum dolor sit amet, et essent mediocritatem quo, choro volumus oporteat an mei. Numquam dolores mel eu, mea docendi omittantur et, mea ea duis erat. Elit melius cu ius. Per ex novum tantas putant, ei his nullam aliquam apeirian. Aeterno quaestio constituto sea an, no eum intellegat assueverit.&lt;/p&gt;&#xA;&#xA;          &#xA;      &lt;/div&gt;&#xA;    &lt;/div&gt;&#xA;  &lt;/div&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;strip bg-cover bg-position-center bg-overlay pt-15 pb-15&#34; style=&#34;background-image: url(&#39; /images/lucho.jpeg &#39;);&#34;&gt;&#xA;  &lt;div class=&#34;container&#34;&gt;&#xA;    &lt;div class=&#34;row&#34;&gt;&#xA;      &lt;div class=&#34;col-12 col-md-6 offset-md-6&#34;&gt;&#xA;          &lt;p&gt;With nearly 20 years of experience, Lucho is an accomplished executive in the field of data and AI. A former McKinsey consultant, he has advised organizations worldwide on turning information into advantage. His career spans global corporations, Fortune 500 companies, and high-growth startups, where he has focused on building durable capabilities and enabling teams to scale with confidence. Today, Lucho offers clear, results-driven guidance to help organizations make smarter decisions and move forward with purpose.&lt;/p&gt;</description>
     </item>
   </channel>
