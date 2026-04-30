@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const formspreeId = import.meta.env.PUBLIC_FORMSPREE_ID ?? 'YOUR_FORM_ID';
+const formAction = `https://formspree.io/f/${formspreeId}`;
+---
+
+<BaseLayout
+  locale="es"
+  pageId="contact"
+  title="Contacto"
+>
+  <section class="hero">
+    <div class="container-base">
+      <p class="eyebrow">Contacto</p>
+      <h1 class="display">
+        Cuéntanos en qué<br />estás trabajando.
+      </h1>
+      <p class="lead">
+        Una llamada inicial de 30 minutos es gratuita. Te decimos honestamente
+        si somos el partner adecuado — y si no, quién podría serlo.
+      </p>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <section class="intake">
+    <div class="container-base grid-2">
+      <div>
+        <p class="eyebrow">Intake</p>
+        <h2>Envíanos algunos detalles.</h2>
+        <p class="intake__hint">
+          Respondemos en un día hábil. ¿Prefieres email?
+          <a href="mailto:contact@kipuai.com">contact@kipuai.com</a>
+        </p>
+      </div>
+
+      <form class="form stack" method="post" action={formAction} data-contact-form aria-label="Formulario de contacto">
+        <input type="hidden" name="_subject" value="Nuevo intake de Kipu" />
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true" />
+        <label class="field">
+          <span>Tu nombre<span class="req" aria-hidden="true">*</span></span>
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+
+        <label class="field">
+          <span>Email corporativo<span class="req" aria-hidden="true">*</span></span>
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+
+        <div class="grid-2 form__row">
+          <label class="field">
+            <span>Empresa<span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="company" required autocomplete="organization" />
+          </label>
+          <label class="field">
+            <span>Tu rol<span class="req" aria-hidden="true">*</span></span>
+            <input type="text" name="role" required autocomplete="organization-title" />
+          </label>
+        </div>
+
+        <div class="grid-2 form__row">
+          <label class="field">
+            <span>Tamaño de la empresa (empleados)</span>
+            <select name="size">
+              <option value="">Selecciona…</option>
+              <option>1–50</option>
+              <option>51–250</option>
+              <option>251–1000</option>
+              <option>1000+</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>País</span>
+            <input type="text" name="country" autocomplete="country-name" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>¿Qué tipo de ayuda?<span class="req" aria-hidden="true">*</span></span>
+          <select name="help_type" required>
+            <option value="">Selecciona…</option>
+            <option>Estrategia / roadmap</option>
+            <option>Implementación hands-on</option>
+            <option>Refuerzo del equipo</option>
+            <option>Auditoría o evaluación</option>
+            <option>Aún no estoy seguro</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>¿Algo más que quieras contarnos? (opcional)</span>
+          <textarea name="message" rows="5" placeholder="Una frase sobre lo que intentas resolver nos ayuda a prepararnos."></textarea>
+        </label>
+
+        <div class="grid-2 form__row">
+          <label class="field">
+            <span>Timeline ideal</span>
+            <select name="timeline">
+              <option value="">Selecciona…</option>
+              <option>Urgente / arrancar ya</option>
+              <option>Este trimestre</option>
+              <option>Próximo trimestre</option>
+              <option>6+ meses</option>
+              <option>Solo explorando</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>¿Cómo nos encontraste?</span>
+            <select name="source">
+              <option value="">Selecciona…</option>
+              <option>Referencia</option>
+              <option>LinkedIn</option>
+              <option>Búsqueda</option>
+              <option>Evento o charla</option>
+              <option>Prensa / podcast</option>
+              <option>Otro</option>
+            </select>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-arrow form__submit" data-magnetic>
+          Enviar
+        </button>
+
+        <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+        <p class="form__success" data-form-success hidden>
+          Gracias — lo recibimos. Te respondemos en un día hábil.
+        </p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function bindContactForm() {
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+    if (!form || (form as any)._kipuBound) return;
+    (form as any)._kipuBound = true;
+    const status = form.querySelector<HTMLElement>('[data-form-status]');
+    const success = form.querySelector<HTMLElement>('[data-form-success]');
+    form.addEventListener('submit', async (e) => {
+      if (form.action.includes('YOUR_FORM_ID')) return;
+      e.preventDefault();
+      if (status) { status.textContent = 'Enviando…'; status.removeAttribute('data-state'); }
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.querySelectorAll('input, select, textarea, button').forEach(el => (el as HTMLInputElement).disabled = true);
+          if (status) status.textContent = '';
+          if (success) success.hidden = false;
+        } else {
+          const data = await res.json().catch(() => ({} as any));
+          if (status) {
+            status.textContent = data?.errors?.[0]?.message ?? 'Algo salió mal. Por favor escribe a contact@kipuai.com.';
+            status.setAttribute('data-state', 'error');
+          }
+        }
+      } catch {
+        if (status) {
+          status.textContent = 'Error de red. Por favor escribe a contact@kipuai.com.';
+          status.setAttribute('data-state', 'error');
+        }
+      }
+    });
+  }
+  document.addEventListener('astro:page-load', bindContactForm);
+  if (document.readyState !== 'loading') bindContactForm();
+  else document.addEventListener('DOMContentLoaded', bindContactForm);
+</script>
+
+<style>
+  .hero { padding-block: clamp(var(--space-12), 12vw, var(--space-20)); }
+  .hero .lead { margin-top: var(--space-4); }
+
+  .intake { padding-block: clamp(var(--space-12), 10vw, var(--space-16)); }
+  .intake h2 { font-size: var(--type-h1); margin-top: var(--space-2); }
+  .intake__hint { color: var(--color-ink-muted); font-size: var(--type-small); margin-top: var(--space-2); }
+  .intake__hint a { color: var(--color-accent); }
+
+  .form { max-width: 32rem; }
+  .form__row { gap: var(--space-3); }
+
+  .field { display: grid; gap: 0.5em; }
+  .field > span { font-size: var(--type-small); font-weight: 500; }
+  .req { color: var(--color-accent); margin-left: 0.2em; }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font: inherit; font-size: var(--type-body);
+    padding: 0.7em 0.9em; background: var(--color-bg-soft);
+    border: 1px solid var(--color-line); color: var(--color-ink); border-radius: 0;
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--color-ink); outline: none; }
+  .field textarea { resize: vertical; min-height: 8rem; }
+
+  .form__submit { justify-self: start; margin-top: var(--space-2); }
+  .form__status { font-size: var(--type-small); color: var(--color-ink-muted); margin-top: var(--space-2); min-height: 1.4em; }
+  .form__status[data-state="error"] { color: #b04545; }
+  .form__success {
+    font-size: var(--type-body); color: var(--color-accent);
+    border-top: 1px solid var(--color-line); padding-top: var(--space-3); margin-top: var(--space-3);
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>

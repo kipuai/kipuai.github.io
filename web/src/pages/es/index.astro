@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { paths } from '../../i18n/strings.ts';
+---
+
+<BaseLayout
+  locale="es"
+  pageId="home"
+  title="De la ambición al impacto con IA"
+>
+  <!-- Hero -->
+  <section class="hero" data-hero>
+    <div class="container-base hero__inner">
+      <p class="eyebrow">Estrategia e Implementación · América Latina</p>
+      <h1 class="display hero__headline">
+        De la ambición<br />al impacto con IA.
+      </h1>
+      <p class="lead hero__lead">
+        Kipu acompaña a empresas líderes de América Latina en la estrategia,
+        las capacidades y los sistemas que convierten la ambición en
+        resultados medibles.
+      </p>
+      <div class="hero__cta">
+        <a href={paths.es.approach} class="btn btn-primary btn-arrow" data-magnetic>
+          Comienza con un Readiness Assessment
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="credibility">
+    <div class="container-base">
+      <p class="credibility__line">
+        Construido por operadores con experiencia en
+        <strong>Y Combinator</strong>, <strong>McKinsey</strong> y equipos de
+        tecnología Fortune 500.
+      </p>
+      <div class="credibility__marquee marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Logo</span><span>Logo</span><span>Logo</span><span>Logo</span><span>Logo</span><span>Logo</span>
+          <span>Logo</span><span>Logo</span><span>Logo</span><span>Logo</span><span>Logo</span><span>Logo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="services section-bg-soft">
+    <div class="container">
+      <div class="services__head" data-reveal>
+        <p class="eyebrow">Servicios</p>
+        <h2 class="services__title">Tres formas de trabajar contigo.</h2>
+      </div>
+
+      <div class="grid-3 services__grid">
+        <article class="service" data-reveal>
+          <p class="service__num">01</p>
+          <h3>Strategy &amp; Readiness</h3>
+          <p>
+            Diagnosticamos dónde se encuentra tu organización hoy y definimos
+            el camino hacia operaciones AI-native. Entregables: el
+            <strong>Kipu Readiness Index</strong>, un roadmap priorizado y
+            asesoría ejecutiva continua.
+          </p>
+          <a href={paths.es.approach} class="service__link">Conoce nuestro enfoque →</a>
+        </article>
+
+        <article class="service" data-reveal>
+          <p class="service__num">02</p>
+          <h3>Capability Building</h3>
+          <p>
+            Workshops, programas para líderes y trayectorias de habilitación
+            para equipos, diseñados para que tu organización opere con fluidez
+            en IA — desde el directorio hasta la operación.
+          </p>
+        </article>
+
+        <article class="service" data-reveal>
+          <p class="service__num">03</p>
+          <h3>Implementation</h3>
+          <p>
+            Ejecución directa de los casos de uso de IA de mayor impacto,
+            trabajo de plataforma de datos y MLOps. Engagements de CTO y CDO
+            fraccionales cuando necesitas liderazgo técnico senior en la mesa.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="closer section-bg-inverse">
+    <div class="container-base closer__inner" data-reveal>
+      <p class="eyebrow eyebrow--inverse">Un Socio Diferente</p>
+      <h2 class="closer__title">
+        La disciplina de una firma.<br />La urgencia de un fundador.
+      </h2>
+      <p class="closer__body">
+        Kipu nació con una idea simple: las decisiones inteligentes necesitan
+        dirección clara. Combinamos la disciplina de las consultoras globales
+        con la urgencia de operadores que han construido, escalado y salido.
+      </p>
+      <a href={paths.es.about} class="btn btn-arrow closer__cta">Sobre Kipu</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding-block: clamp(var(--space-12), 12vw, var(--space-20)); }
+  .hero__inner { display: grid; gap: var(--space-6); }
+  .hero__headline { margin-top: var(--space-2); }
+  .hero__lead { margin-top: var(--space-2); }
+  .hero__cta { margin-top: var(--space-4); }
+
+  .credibility { padding-block: var(--space-8); border-top: 1px solid var(--color-line); border-bottom: 1px solid var(--color-line); }
+  .credibility__line { color: var(--color-ink-muted); font-size: var(--type-small); text-align: center; margin: 0 auto var(--space-6); max-width: 60ch; }
+  .credibility__line strong { color: var(--color-ink); font-weight: 600; }
+
+  .credibility__marquee { overflow: hidden; opacity: 0.4; }
+  .credibility__marquee-inner {
+    display: flex; gap: var(--space-12); justify-content: space-around;
+    font-family: var(--font-display); font-size: 1.5rem; color: var(--color-ink-muted);
+  }
+
+  .services__head { margin-bottom: var(--space-8); max-width: 40ch; }
+  .services__title { font-size: var(--type-h1); margin-top: var(--space-2); }
+  .services__grid { margin-top: var(--space-6); }
+
+  .service { display: flex; flex-direction: column; gap: var(--space-2); padding-top: var(--space-4); border-top: 1px solid var(--color-line); }
+  .service__num { font-family: var(--font-display); font-size: 0.875rem; color: var(--color-accent); margin: 0; letter-spacing: var(--tracking-wide); }
+  .service h3 { margin-bottom: var(--space-1); }
+  .service__link { display: inline-block; margin-top: var(--space-2); font-size: var(--type-small); font-weight: 500; color: var(--color-accent); }
+  .service__link:hover { color: var(--color-ink); }
+
+  .closer__inner { text-align: center; display: grid; gap: var(--space-3); justify-items: center; }
+  .closer__title { font-size: var(--type-display); line-height: var(--leading-tight); }
+  .closer__body { color: color-mix(in srgb, var(--color-inverse-ink) 80%, transparent); max-width: 50ch; }
+  .closer__cta { margin-top: var(--space-4); border-color: var(--color-inverse-ink); color: var(--color-inverse-ink); }
+  .closer__cta:hover { background: var(--color-inverse-ink); color: var(--color-inverse-bg); border-color: var(--color-inverse-ink); }
+  .eyebrow--inverse { color: color-mix(in srgb, var(--color-inverse-ink) 60%, transparent); }
+</style>

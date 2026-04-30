@@ -1,0 +1,22 @@
+{
+  "name": "kipu-web",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kipu — strategy and implementation for AI-native companies in Latin America.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^6.1.9"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.2",
+    "typescript": "^5.6.0"
+  }
+}

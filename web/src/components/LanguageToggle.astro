@@ -1,0 +1,36 @@
+---
+import { strings, alternateLocaleUrl, type Locale, type PageId } from '../i18n/strings.ts';
+
+interface Props {
+  locale: Locale;
+  pageId: PageId;
+}
+
+const { locale, pageId } = Astro.props;
+const t = strings[locale];
+const href = alternateLocaleUrl(locale, pageId);
+---
+
+<a href={href} class="lang-toggle" aria-label={t.languageToggle.ariaLabel}>
+  {t.languageToggle.label}
+</a>
+
+<style>
+  .lang-toggle {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: var(--type-eyebrow);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    padding: 0.4em 0.7em;
+    border: 1px solid var(--color-line);
+    color: var(--color-ink);
+    transition:
+      border-color var(--duration-fast) var(--ease-out),
+      color var(--duration-fast) var(--ease-out);
+  }
+  .lang-toggle:hover {
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+  }
+</style>

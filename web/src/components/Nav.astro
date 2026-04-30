@@ -1,0 +1,108 @@
+---
+import LanguageToggle from './LanguageToggle.astro';
+import { strings, paths, type Locale, type PageId } from '../i18n/strings.ts';
+
+interface Props {
+  locale: Locale;
+  pageId: PageId;
+}
+
+const { locale, pageId } = Astro.props;
+const t = strings[locale];
+const p = paths[locale];
+
+const items: { id: PageId; label: string; href: string }[] = [
+  { id: 'approach', label: t.nav.approach, href: p.approach },
+  { id: 'about',    label: t.nav.about,    href: p.about },
+  { id: 'contact',  label: t.nav.contact,  href: p.contact },
+];
+---
+
+<header class="nav" data-current={pageId}>
+  <div class="nav__inner container">
+    <a class="nav__brand" href={p.home} aria-label={t.siteTitle}>
+      <span class="nav__logo">Kipu</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav__list">
+        {items.map(item => (
+          <li>
+            <a
+              href={item.href}
+              aria-current={pageId === item.id ? 'page' : undefined}
+              class="nav__link"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+        <li><LanguageToggle locale={locale} pageId={pageId} /></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--space-2);
+    min-height: 64px;
+  }
+
+  .nav__brand {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .nav__logo {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav__link {
+    font-size: var(--type-small);
+    font-weight: 500;
+    color: var(--color-ink);
+    padding: 0.4em 0;
+    position: relative;
+  }
+
+  .nav__link[aria-current='page']::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: var(--color-ink);
+  }
+
+  @media (max-width: 800px) {
+    .nav__list { gap: var(--space-3); }
+    .nav__link { font-size: 0.8rem; }
+  }
+</style>

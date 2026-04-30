@@ -1,0 +1,137 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { strings, paths, type Locale, type PageId } from '../i18n/strings.ts';
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+  pageId: PageId;
+  title?: string;
+  description?: string;
+}
+
+const { locale, pageId, title, description } = Astro.props;
+const t = strings[locale];
+const pageTitle = title ? `${title} — ${t.siteTitle}` : t.siteTitle;
+const pageDescription = description ?? t.metaDescription;
+
+const canonical = new URL(paths[locale][pageId], Astro.site).toString();
+const altLocale: Locale = locale === 'en' ? 'es' : 'en';
+const altUrl = new URL(paths[altLocale][pageId], Astro.site).toString();
+
+const isProd = import.meta.env.PROD;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    <link rel="alternate" hreflang={altLocale} href={altUrl} />
+    <link rel="alternate" hreflang="x-default" href={new URL(paths.en[pageId], Astro.site).toString()} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'es_ES'} />
+    <meta property="og:site_name" content="Kipu" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kipuai" />
+    <meta name="twitter:creator" content="@kipuai" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <ClientRouter />
+
+    {isProd && (
+      <!-- PostHog (production only) -->
+      <script is:inline>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_oUnGynedFnH500uxhFpcBxSX6BwYFB9ah22rXB7YXey', {
+          api_host: 'https://us.i.posthog.com',
+          person_profiles: 'identified_only',
+        });
+      </script>
+    )}
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Nav locale={locale} pageId={pageId} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+
+    <!-- Motion wiring. Idempotent across View Transitions. -->
+    <script>
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function setupReveals() {
+        if (reduced) {
+          document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
+          return;
+        }
+        const els = document.querySelectorAll('[data-reveal]:not(.is-visible)');
+        if (!els.length) return;
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(el => io.observe(el));
+      }
+
+      function setupHeroArrival() {
+        document.querySelectorAll('[data-hero]').forEach(el => {
+          requestAnimationFrame(() => el.classList.add('is-loaded'));
+        });
+      }
+
+      function setupMagnetic() {
+        if (reduced) return;
+        document.querySelectorAll<HTMLElement>('[data-magnetic]').forEach(btn => {
+          if ((btn as any)._kipuBound) return;
+          (btn as any)._kipuBound = true;
+          const strength = 0.25;
+          btn.addEventListener('mousemove', (e) => {
+            const r = btn.getBoundingClientRect();
+            const x = (e.clientX - (r.left + r.width / 2)) * strength;
+            const y = (e.clientY - (r.top + r.height / 2)) * strength;
+            btn.style.transform = `translate(${x}px, ${y}px)`;
+          });
+          btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+        });
+      }
+
+      function init() {
+        setupHeroArrival();
+        setupReveals();
+        setupMagnetic();
+      }
+
+      document.addEventListener('astro:page-load', init);
+      if (document.readyState !== 'loading') init();
+      else document.addEventListener('DOMContentLoaded', init);
+    </script>
+  </body>
+</html>

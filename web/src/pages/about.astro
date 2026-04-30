@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  locale="en"
+  pageId="about"
+  title="About Kipu"
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container-base" data-reveal>
+      <p class="eyebrow">About</p>
+      <h1 class="display">
+        Two operators.<br />Decades of experience.<br />One firm.
+      </h1>
+    </div>
+  </section>
+
+  <hr class="rule" />
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container-base grid-2">
+      <div>
+        <p class="eyebrow">Why Kipu</p>
+        <h2>The gap we sit in.</h2>
+      </div>
+      <div class="stack">
+        <p>
+          Kipu was founded by two cousins who spent the last fifteen years
+          building, advising, and scaling technology companies — across Lima,
+          New York, San Francisco, and the Fortune 500.
+        </p>
+        <p>
+          We started Kipu because the strategy work that mid-large Latin
+          American companies need is rarely served well: global consultancies
+          are too generic, local agencies are too tactical, and most "AI
+          advisors" haven't shipped anything. We sit in the gap.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bios -->
+  <section class="bios section-bg-soft">
+    <div class="container">
+      <div class="bios__head">
+        <p class="eyebrow">The Team</p>
+        <h2>Partners.</h2>
+      </div>
+
+      <div class="grid-2 bios__grid">
+        <article class="bio" data-reveal>
+          <div class="bio__photo">
+            <img src="/jorge.jpg" alt="Jorge Escobedo" class="bio__img" loading="lazy" />
+          </div>
+          <div class="bio__body">
+            <h3>Jorge Escobedo</h3>
+            <p class="bio__role">Partner</p>
+            <p>
+              Jorge spent the last decade leading data and ML teams at
+              venture-backed companies — most recently at Drop and Unravel
+              Carbon, after founding a Y Combinator-backed startup. His
+              specialties include personalization, recommendations, search,
+              and MLOps. More recently, he's been deploying LLMs in
+              production — both to elevate the customer-facing experience
+              and to automate internal workflows. PhD in theoretical physics.
+            </p>
+          </div>
+        </article>
+
+        <article class="bio" data-reveal>
+          <div class="bio__photo">
+            <img src="/lucho.jpeg" alt="Lucho Escobedo" class="bio__img" loading="lazy" />
+          </div>
+          <div class="bio__body">
+            <h3>Lucho Escobedo</h3>
+            <p class="bio__role">Partner</p>
+            <p>
+              Lucho brings nearly twenty years in data and AI as an
+              executive and former McKinsey consultant, advising
+              organizations worldwide on turning information into advantage.
+              His career spans global corporations, Fortune 500 firms, and
+              high-growth startups, where he has focused on building durable
+              capabilities and helping teams scale. He works with leaders
+              to make smarter decisions and move forward with purpose.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section class="how">
+    <div class="container-base">
+      <p class="eyebrow">How we work</p>
+      <h2 class="how__title">Three commitments.</h2>
+
+      <div class="grid-3 how__grid">
+        <div class="principle">
+          <h3>Senior people, in the room.</h3>
+          <p>Every Kipu engagement is led by a partner. No bait-and-switch.</p>
+        </div>
+        <div class="principle">
+          <h3>Fixed scope, fixed fee.</h3>
+          <p>
+            No open-ended retainers. You know what you're paying for and when
+            it ends.
+          </p>
+        </div>
+        <div class="principle">
+          <h3>Built to ship.</h3>
+          <p>
+            Every recommendation comes with the path to execute it — and we
+            can execute it with you if you want.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding-block: clamp(var(--space-12), 12vw, var(--space-20)); }
+  .intro { padding-block: clamp(var(--space-12), 10vw, var(--space-16)); }
+  .intro h2 { font-size: var(--type-h1); margin-top: var(--space-2); }
+
+  .bios__head { max-width: 40ch; margin-bottom: var(--space-8); }
+  .bios__head h2 { font-size: var(--type-h1); margin-top: var(--space-2); }
+
+  .bio { display: grid; gap: var(--space-4); }
+  .bio__photo {
+    aspect-ratio: 4 / 5;
+    background: color-mix(in srgb, var(--color-accent-soft) 60%, var(--color-bg));
+    overflow: hidden;
+  }
+  .bio__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .bio__body { display: grid; gap: var(--space-2); }
+  .bio__role { font-family: var(--font-body); font-size: var(--type-eyebrow); font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--color-accent); margin: 0; }
+
+  .how__title { font-size: var(--type-h1); margin-top: var(--space-2); margin-bottom: var(--space-8); }
+  .principle { padding-top: var(--space-3); border-top: 1px solid var(--color-line); }
+  .principle h3 { margin-bottom: var(--space-2); }
+</style>
