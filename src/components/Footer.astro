@@ -1,0 +1,88 @@
+---
+import { strings, paths, type Locale } from '../i18n/strings.ts';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = strings[locale];
+const p = paths[locale];
+---
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <div class="footer__col">
+      <a href={p.home} class="footer__brand">Kipu</a>
+      <p class="footer__tag">{t.siteTagline}</p>
+    </div>
+
+    <nav aria-label="Footer">
+      <ul class="footer__list">
+        <li><a href={p.home}>{t.footer.home}</a></li>
+        <li><a href={p.approach}>{t.footer.approach}</a></li>
+        <li><a href={p.about}>{t.footer.about}</a></li>
+        <li><a href={p.contact}>{t.footer.contact}</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer__bottom container">
+    <span>{t.footer.copyright}</span>
+    <a href="mailto:contact@kipuai.com">contact@kipuai.com</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-line);
+    padding-block: var(--space-12);
+    margin-top: var(--space-16);
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .footer__inner { grid-template-columns: 2fr 1fr; }
+  }
+  .footer__col { max-width: 32ch; }
+  .footer__brand {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    margin-bottom: var(--space-2);
+  }
+  .footer__tag {
+    color: var(--color-ink-muted);
+    font-size: var(--type-small);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .footer__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .footer__list a {
+    font-size: var(--type-small);
+    color: var(--color-ink);
+  }
+  .footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-8);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-line);
+    font-size: var(--type-small);
+    color: var(--color-ink-muted);
+  }
+</style>
