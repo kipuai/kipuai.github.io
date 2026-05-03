@@ -1,0 +1,45 @@
+---
+import Pendant from './Pendant.astro';
+
+interface Props {
+  symSize?: number;
+  textSize?: number;
+  gap?: number;
+  weight?: 'light' | 'regular' | 'medium';
+  textWeight?: number;
+}
+
+const {
+  symSize = 40,
+  textSize = 32,
+  gap = 14,
+  weight = 'regular',
+  textWeight = 500,
+} = Astro.props;
+---
+
+<span
+  class="lockup"
+  style={`gap: ${gap}px;`}
+>
+  <Pendant size={symSize} weight={weight} />
+  <span
+    class="lockup__word"
+    style={`font-size: ${textSize}px; font-weight: ${textWeight};`}
+  >kipu</span>
+</span>
+
+<style>
+  .lockup {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    line-height: 1;
+  }
+  .lockup__word {
+    font-family: var(--font-body);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: inherit;
+  }
+</style>

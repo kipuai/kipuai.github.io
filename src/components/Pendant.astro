@@ -1,0 +1,53 @@
+---
+interface Props {
+  size?: number;
+  weight?: 'light' | 'regular' | 'medium';
+}
+
+const { size = 64, weight = 'regular' } = Astro.props;
+
+const weights = {
+  light:   { cord: 0.032, pendant: 0.028, dot: 0.042 },
+  regular: { cord: 0.042, pendant: 0.035, dot: 0.050 },
+  medium:  { cord: 0.055, pendant: 0.045, dot: 0.060 },
+};
+const w = weights[weight];
+
+// Fixed 64-unit grid; width/height attrs scale the render
+const S = 64;
+const cordW = S * w.cord;
+const pendW = S * w.pendant;
+const dotR  = S * w.dot;
+const topY  = S * 0.20;
+const cordL = S * 0.12;
+const cordR = S * 0.88;
+
+const pendants = [
+  { x: S * 0.28, endY: S * 0.58 },
+  { x: S * 0.50, endY: S * 0.76 },
+  { x: S * 0.72, endY: S * 0.48 },
+];
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 64 64"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <line
+    x1={cordL} y1={topY} x2={cordR} y2={topY}
+    stroke="currentColor" stroke-width={cordW} stroke-linecap="round"
+  />
+  {pendants.map(p => (
+    <g>
+      <line
+        x1={p.x} y1={topY} x2={p.x} y2={p.endY}
+        stroke="currentColor" stroke-width={pendW} stroke-linecap="round"
+      />
+      <circle cx={p.x} cy={p.endY} r={dotR} fill="currentColor" />
+    </g>
+  ))}
+</svg>

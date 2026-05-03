@@ -1,5 +1,6 @@
 ---
 import LanguageToggle from './LanguageToggle.astro';
+import PendantLockup from './PendantLockup.astro';
 import { strings, paths, type Locale, type PageId } from '../i18n/strings.ts';
 
 interface Props {
@@ -21,7 +22,7 @@ const items: { id: PageId; label: string; href: string }[] = [
 <header class="nav" data-current={pageId}>
   <div class="nav__inner container">
     <a class="nav__brand" href={p.home} aria-label={t.siteTitle}>
-      <span class="nav__logo">Kipu</span>
+      <PendantLockup symSize={28} textSize={22} gap={10} weight="regular" textWeight={500} />
     </a>
 
     <nav aria-label="Primary">
@@ -66,12 +67,6 @@ const items: { id: PageId; label: string; href: string }[] = [
   .nav__brand {
     display: inline-flex;
     align-items: center;
-  }
-
-  .nav__logo {
-    height: 28px;
-    width: auto;
-    display: block;
   }
 
   .nav__list {

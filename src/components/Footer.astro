@@ -1,4 +1,5 @@
 ---
+import PendantLockup from './PendantLockup.astro';
 import { strings, paths, type Locale } from '../i18n/strings.ts';
 
 interface Props {
@@ -13,7 +14,9 @@ const p = paths[locale];
 <footer class="footer">
   <div class="footer__inner container">
     <div class="footer__col">
-      <a href={p.home} class="footer__brand">Kipu</a>
+      <a href={p.home} class="footer__brand" aria-label="Kipu">
+        <PendantLockup symSize={40} textSize={28} gap={12} weight="regular" textWeight={500} />
+      </a>
       <p class="footer__tag">{t.siteTagline}</p>
     </div>
 
@@ -50,11 +53,7 @@ const p = paths[locale];
   }
   .footer__col { max-width: 32ch; }
   .footer__brand {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    display: inline-block;
+    display: inline-flex;
     margin-bottom: var(--space-2);
   }
   .footer__tag {
