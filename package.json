@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "Kipu — strategy and implementation for AI-native companies in Latin America.",
+  "description": "Kipu — strategy and implementation for AI-native companies.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

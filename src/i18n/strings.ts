@@ -9,9 +9,9 @@ export type Locale = 'en' | 'es';
 export const strings = {
   en: {
     siteTitle: 'Kipu',
-    siteTagline: 'Strategy and implementation for AI-native companies in Latin America.',
+    siteTagline: 'Strategy and implementation for AI-native companies.',
     metaDescription:
-      'Kipu partners with leading Latin American enterprises on the strategy, capabilities, and systems that turn AI ambition into measurable outcomes.',
+      'Kipu partners with leading enterprises on the strategy, capabilities, and systems that turn AI ambition into measurable outcomes.',
 
     nav: {
       home: 'Home',

@@ -39,7 +39,7 @@ Service line names stay in English in both language versions.
 | Language toggle | ES | EN |
 | Primary CTA | Start with a Readiness Assessment | Comienza con un Readiness Assessment |
 | Secondary CTA | Talk to us | Conversemos |
-| Footer tagline | Strategy and implementation for AI-native companies in Latin America. | Estrategia e implementación para empresas AI-native en América Latina. |
+| Footer tagline | Strategy and implementation for AI-native companies. | Estrategia e implementación para empresas AI-native. |
 | Copyright | © 2026 Kipu | © 2026 Kipu |
 
 ---
@@ -50,7 +50,7 @@ Service line names stay in English in both language versions.
 
 **EN — primary**
 > # From AI ambition to AI advantage.
-> Kipu partners with leading Latin American enterprises on the strategy, capabilities, and systems that turn AI ambition into measurable outcomes.
+> Kipu partners with leading enterprises on the strategy, capabilities, and systems that turn AI ambition into measurable outcomes.
 >
 > **[ Start with a Readiness Assessment → ]**
 
@@ -223,7 +223,7 @@ Service line names stay in English in both language versions.
 ## 2.6 FAQ
 
 **EN**
-> **Who is this for?** Mid-sized and large enterprises in Latin America with serious intent to operate as AI-native — usually $50M+ in revenue, with leadership commitment from the CEO or COO.
+> **Who is this for?** Mid-sized and large enterprises with serious intent to operate as AI-native — usually $50M+ in revenue, with leadership commitment from the CEO or COO.
 >
 > **What does it cost?** Fixed scope, fixed fee. We share the number on the intro call.
 >
@@ -267,7 +267,7 @@ Service line names stay in English in both language versions.
 **EN**
 > Kipu was founded by two cousins who spent the last fifteen years building, advising, and scaling technology companies — across Lima, New York, San Francisco, and the Fortune 500.
 >
-> We started Kipu because the strategy work that mid-large Latin American companies need is rarely served well: global consultancies are too generic, local agencies are too tactical, and most "AI advisors" haven't shipped anything. We sit in the gap.
+> We started Kipu because the strategy work that mid-large companies need is rarely served well: global consultancies are too generic, local agencies are too tactical, and most "AI advisors" haven't shipped anything. We sit in the gap.
 
 **ES**
 > Kipu fue fundada por dos primos que pasaron los últimos quince años construyendo, asesorando y escalando empresas de tecnología — entre Lima, Nueva York, San Francisco y el Fortune 500.

@@ -43,7 +43,7 @@ Everything else below is v1 copy, untouched.
 | Nav: Contact | Contact |
 | Primary CTA | Start with a Readiness Assessment |
 | Secondary CTA | Talk to us |
-| Footer tagline | Strategy and implementation for AI-native companies in Latin America. |
+| Footer tagline | Strategy and implementation for AI-native companies. |
 | Copyright | © 2026 Kipu |
 
 ---
@@ -54,7 +54,7 @@ Everything else below is v1 copy, untouched.
 
 **Primary**
 > # From AI ambition to AI advantage.
-> Kipu partners with leading Latin American enterprises on the strategy, capabilities, and systems that turn AI ambition into measurable outcomes.
+> Kipu partners with leading enterprises on the strategy, capabilities, and systems that turn AI ambition into measurable outcomes.
 >
 > **[ Start with a Readiness Assessment → ]**
 
@@ -170,7 +170,7 @@ Everything else below is v1 copy, untouched.
 
 ## 2.8 FAQ
 
-> **Who is this for?** Mid-market and enterprise organizations in Latin America with serious intent to operate as AI-native and executive sponsorship from the CEO, COO, or CTO.
+> **Who is this for?** Mid-market and enterprise organizations with serious intent to operate as AI-native and executive sponsorship from the CEO, COO, or CTO.
 >
 > **What does it cost?** Fixed scope, fixed fee. We share the number on the intro call.
 >
@@ -195,7 +195,7 @@ Everything else below is v1 copy, untouched.
 
 > Kipu was founded by two cousins who spent the last fifteen years building, advising, and scaling technology companies — across Lima, New York, San Francisco, and the Fortune 500.
 >
-> We started Kipu because the strategy work that mid-large Latin American companies need is rarely served well: global consultancies are too generic, local agencies are too tactical, and most "AI advisors" haven't shipped anything. We sit in the gap.
+> We started Kipu because the strategy work that mid-large companies need is rarely served well: global consultancies are too generic, local agencies are too tactical, and most "AI advisors" haven't shipped anything. We sit in the gap.
 
 ## 3.3 Bios
 

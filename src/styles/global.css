@@ -34,18 +34,27 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- Typography ---------- */
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
   font-weight: 500;
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
   margin: 0;
   color: var(--color-ink);
   text-wrap: balance;
 }
 
+h1, h2 {
+  font-family: var(--font-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+h3, h4 {
+  font-family: var(--font-body);
+  line-height: var(--leading-snug);
+}
+
 h1 { font-size: var(--type-h1); }
 h2 { font-size: var(--type-h2); line-height: var(--leading-snug); }
-h3 { font-size: var(--type-h3); line-height: var(--leading-snug); }
+h3 { font-size: var(--type-h3); letter-spacing: -0.015em; }
+h4 { font-size: var(--type-h4); letter-spacing: -0.01em; }
 
 p {
   margin: 0;

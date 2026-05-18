@@ -67,7 +67,7 @@ function ogSvg() {
     font-family="'Helvetica Neue', 'Arial', sans-serif"
     font-size="22" font-weight="400"
     fill="${INVERSE}" opacity="0.45" text-anchor="middle"
-  >AI strategy &amp; implementation · Latin America</text>
+  >AI strategy &amp; implementation</text>
 </svg>`
   );
 }

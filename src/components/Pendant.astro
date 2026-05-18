@@ -7,9 +7,9 @@ interface Props {
 const { size = 64, weight = 'regular' } = Astro.props;
 
 const weights = {
-  light:   { cord: 0.032, pendant: 0.028, dot: 0.042 },
-  regular: { cord: 0.042, pendant: 0.035, dot: 0.050 },
-  medium:  { cord: 0.055, pendant: 0.045, dot: 0.060 },
+  light:   { cord: 0.030, pendant: 0.022, dot: 0.038 },
+  regular: { cord: 0.042, pendant: 0.030, dot: 0.048 },
+  medium:  { cord: 0.058, pendant: 0.042, dot: 0.060 },
 };
 const w = weights[weight];
 
@@ -18,14 +18,14 @@ const S = 64;
 const cordW = S * w.cord;
 const pendW = S * w.pendant;
 const dotR  = S * w.dot;
-const topY  = S * 0.20;
-const cordL = S * 0.12;
-const cordR = S * 0.88;
+const topY  = S * 0.215;
+const cordL = S * 0.10;
+const cordR = S * 0.90;
 
 const pendants = [
-  { x: S * 0.28, endY: S * 0.58 },
-  { x: S * 0.50, endY: S * 0.76 },
-  { x: S * 0.72, endY: S * 0.48 },
+  { x: S * 0.285, endY: S * 0.595 },
+  { x: S * 0.500, endY: S * 0.780 },
+  { x: S * 0.715, endY: S * 0.465 },
 ];
 ---
 
